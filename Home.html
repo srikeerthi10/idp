@@ -1,0 +1,270 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bakery</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <style>
+        /* Basic Styles */
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        header {
+            text-align: center;
+            background-color: white;
+            padding: 20px 0;
+            color: red;
+        }
+
+        header h1 {
+            color: red;
+            font-size: 2.5em;
+            margin-top: 10px;
+        }
+
+        nav {
+            background-color: #333;
+            padding: 10px 0;
+        }
+
+        nav ul {
+            display: flex;
+            justify-content: center;
+            list-style-type: none;
+            margin: 0;
+            padding: 0;
+        }
+
+        nav ul li {
+            margin: 0 15px;
+        }
+
+        nav button {
+            background-color: #ff6f61;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+
+        nav button:hover {
+            background-color: #e65c52;
+        }
+
+        nav ul li a {
+            text-decoration: none;
+        }
+        .container {
+            padding: 20px;
+            text-align: center;
+        }
+
+        .specialties h2,
+        .special-offers h2 {
+            color: #f2a900;
+            font-size: 2em;
+        }
+
+        .specialties ul,
+        .special-offers ul {
+            list-style-type: none;
+            padding: 0;
+        }
+
+        .specialties li,
+        .special-offers li {
+            color: #555;
+            font-size: 1.2em;
+            margin: 10px 0;
+        }
+        .item-list {
+            border: 1px solid #ddd;
+            padding: 15px;
+            width: 30%;
+            box-sizing: border-box;
+            background-color: #f9f9f9;
+            margin: 10px 0;
+            text-align: left;
+            display: inline-block;
+            vertical-align: top;
+            border-radius: 5px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+
+        .item-list h3 {
+            color: #f2a900;
+            font-size: 1.5em;
+        }
+
+        .item-list ul {
+            list-style-type: none;
+            padding: 0;
+        }
+
+        .item-list ul li {
+            color: #333;
+            font-size: 1.2em;
+            margin: 5px 0;
+        }
+
+        /* Special Offers Section */
+        .special-offers {
+            margin-top: 20px;
+        }
+
+        .special-offers ul {
+            list-style-type: none;
+            padding: 0;
+        }
+
+        .special-offers li {
+            color: #f2a900;
+            font-size: 1.2em;
+            margin: 10px 0;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 1024px) {
+            .item-list {
+                width: 45%;
+            }
+        }
+
+        @media (max-width: 768px) {
+            nav ul {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .item-list {
+                width: 80%;
+                margin-bottom: 20px;
+            }
+
+            .specialties h2, .special-offers h2 {
+                font-size: 1.8em;
+            }
+
+            .specialties li, .special-offers li {
+                font-size: 1.1em;
+            }
+        }
+
+        @media (max-width: 480px) {
+            header h1 {
+                font-size: 2em;
+            }
+
+            .item-list {
+                width: 100%;
+            }
+
+            nav ul {
+                flex-direction: column;
+            }
+
+            nav button {
+                width: 100%;
+                padding: 15px;
+                font-size: 1.1em;
+            }
+        }
+
+    </style>
+</head>
+<body>
+    <center>
+        <img style="width: 150px; 
+            height: 150px; 
+            object-fit: cover; 
+            border-radius: 50%; 
+            background-color: white;" 
+            src="bakery.jpg" 
+            alt="Bakery Logo - Bakery">
+    </center>
+    <header>
+       <h1>Welcome to Our Bakery!</h1>
+    </header>
+
+    <nav>
+        <ul>
+            <li><a href="Home.html"><button>HOME</button></a></li>
+            <li><a href="cakes.html"><button>Cake Items</button></a></li>
+            <li><a href="icecreams.html"><button>Ice Creams</button></a></li>
+            <li><a href="drinks.html"><button>Drinks</button></a></li>
+            <li><a href="offers.html"><button>Special Offers</button></a></li>
+            <li><a href="contactinfo.html"><button>Contact Info</button></a></li>
+            <li><a href="cart&order.html"><button>Ordered Items</button></a></li>
+        </ul>
+    </nav>
+
+    <!-- Bakery Specialties Section -->
+    <section class="container">
+        <article class="specialties">
+            <h2>Our Specialties</h2>
+            <ul>
+                <li>Freshly baked cakes every day</li>
+                <li>Delicious homemade ice creams</li>
+                <li>Artisan drinks made with natural flavors</li>
+                <li>Warm and crispy croissants, muffins, and pastries</li>
+                <li>Gluten-free options available</li> <!-- Added extra specialty -->
+            </ul>
+        </article>
+
+        <!-- Available Items Section -->
+        <div class="item-list">
+            <h3>Cakes</h3>
+            <ul>
+                <li>Chocolate - $15</li>
+                <li>Vanilla - $12</li>
+                <li>Cup Cake - $3</li>
+                <li>Croissant - $6</li>
+                <li>Brownie - $4</li>
+                <li>Muffin - $2</li>
+                <li>Danish - $20</li>
+                <li>Bagel - $4</li>
+                <li>Pancake - $5</li>
+                <li>Scone - $3</li>
+                <li>Red Velvet Cake - $18</li> <!-- Added extra cake item -->
+                <li>Carrot Cake - $16</li> <!-- Added extra cake item -->
+            </ul>
+        </div>
+
+        <div class="item-list">
+            <h3>Ice Creams</h3>
+            <ul>
+                <li>Chocolate Ice Cream - $55</li>
+                <li>Vanilla Ice Cream - $35</li>
+                <li>Strawberry Ice Cream - $22</li>
+                <li>Mint Chocolate Chip - $12</li>
+                <li>Cookies and Cream - $25</li>
+                <li>Peach Sorbet - $18</li>  
+                <li>Coffee Ice Cream - $28</li> 
+                <li>Caramel Swirl Ice Cream- $30</li>
+                <li>Butter Pecan Ice Cream - $27</li>  
+                <li>Pistachio Ice Cream - $32</li> 
+                <li>Rocky Road Ice Cream - $33</li> 
+            </ul>
+        </div>
+
+        <div class="item-list">
+            <h3>Drinks</h3>
+            <ul>
+                <li>Coffee - $3</li>
+                <li>Tea - $2.5</li>
+                <li>Fresh Juice - $4</li>
+                <li>Milkshakes - $4.5</li>
+                <li>Hot Chocolate - $5</li> 
+                <li>Iced Tea - $3.5</li> 
+            </ul>
+        </div>
+    </section>
+</body>
+</html>

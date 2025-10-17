@@ -1,0 +1,295 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Special Offers - Our Bakery</title>
+    <style>
+        /* Basic Styles */
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            background-color: #fff;
+        }
+
+        header {
+            text-align: center;
+            background-color: white;
+            padding: 10px;
+            color: red;
+        
+        }
+
+        header img {
+            width: 150px;
+            height: auto;
+        }
+
+        header h1 {
+        color: red; /* Set header font color to red */
+        font-size: 2.5em;
+    }
+
+    nav {
+            background-color: #333;
+            padding: 10px 0;
+        }
+
+        nav ul {
+            display: flex;
+            justify-content: center;
+            list-style-type: none;
+            margin: 0;
+            padding: 0;
+        }
+
+        nav ul li {
+            margin: 0 15px;
+        }
+
+        nav button {
+            background-color: #ff6f61;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            cursor: pointer;
+        }
+
+        nav button:hover {
+            background-color: #e65c52;
+        } 
+
+        /* Template Section */
+        .container {
+            padding: 20px;
+            text-align: center;
+        }
+
+        /* Special Offers Section */
+        .special-offers {
+            display: flex;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            margin-top: 30px;
+        }
+
+        .offer-item {
+            width: 22%; 
+            margin: 10px;
+            padding: 15px;
+            background-color: #f9f9f9;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            text-align: center;
+            box-sizing: border-box;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+        }
+
+        .offer-item img {
+            width: 100%;
+            height: 200px; 
+            object-fit: cover; 
+            border-radius: 8px;
+        }
+
+        .offer-item h3 {
+            color: #ff6f61;
+            font-size: 1.6em;
+            margin-bottom: 10px;
+        }
+
+        .offer-item ul {
+            list-style-type: none;
+            padding: 0;
+            margin-bottom: 10px;
+        }
+
+        .offer-item ul li {
+            font-size: 1.2em;
+            color: #333;
+            margin: 8px 0;
+        }
+
+        .offer-item button {
+            background-color: #4caf50;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            margin-top: 15px;
+            cursor: pointer;
+            font-size: 1em;
+            border-radius: 5px;
+        }
+
+        .offer-item button:hover {
+            background-color: #45a049;
+        }
+
+        /* Cart Section */
+        #cart {
+            margin-top: 30px;
+            padding: 20px;
+            background-color: #f1f1f1;
+            border-radius: 8px;
+        }
+
+        #cart ul {
+            list-style-type: none;
+            padding: 0;
+        }
+
+        #cart ul li {
+            font-size: 1.2em;
+            margin-bottom: 10px;
+        }
+
+        #cart input {
+            width: 100px;
+            padding: 5px;
+            font-size: 1em;
+            margin-right: 10px;
+        }
+
+        #cart button {
+            padding: 10px 15px;
+            background-color: #ff6f61;
+            border: none;
+            cursor: pointer;
+            color: white;
+            font-size: 1em;
+            border-radius: 5px;
+        }
+
+        #cart button:hover {
+            background-color: #e65c52;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .offer-item {
+                width: 100%;
+                margin-bottom: 20px;
+            }
+
+            .special-offers {
+                text-align: center;
+                display: block;
+            }
+        }
+     
+    </style>
+</head>
+<body>
+    
+    <center><header><h1>SPECIAL OFFERS</h1></header></center>
+    
+    <nav>
+        <ul>
+            <li><a href="index.html"><button>HOME</button></a></li>
+            <li><a href="index1.html"><button>Cake Items</button></a></li>
+            <li><a href="index2.html"><button>Ice Creams</button></a></li>
+            <li><a href="index3.html"><button>Drinks</button></a></li>
+            <li><a href="index4.html"><button>Special Offers</button></a></li>
+            <li><a href="index5.html"><button>Contact Info</button></a></li>
+            <li><a href="index6.html"><button>Ordered Items</button></a></li>
+            
+        </ul>
+    </nav>
+
+    <!-- Special Offers Section -->
+    <div class="container">
+        <section class="special-offers">
+            <!-- Special Offer 1 -->
+            <div class="offer-item">
+                <img src="Vanilla Cake.jpg" alt="Discount Cake">
+                <h3>Discount on Chocolate Cake</h3>
+                <ul>
+                    <li>Price: $12.00</li>
+                    <li>Original Price: $15.00</li>
+                    <li>Save: $3</li>
+                </ul>
+                <button onclick="addToCart('Discount Chocolate Cake', 12)">Add to Cart</button>
+            </div>
+
+            <!-- Special Offer 2 -->
+            <div class="offer-item">
+                <img src="Cupcake.jpg" alt="Discount Cupcake">
+                <h3>Discount on Cupcake</h3>
+                <ul>
+                    <li>Price: $2.00</li>
+                    <li>Original Price: $3.00</li>
+                    <li>Save: $1</li>
+                </ul>
+                <button onclick="addToCart('Discount Cupcake', 2)">Add to Cart</button>
+            </div>
+
+            <!-- Special Offer 3 -->
+            <div class="offer-item">
+                <img src="Muffin.jpg" alt="Discount Muffin">
+                <h3>Discount on Muffin</h3>
+                <ul>
+                    <li>Price: $1.50</li>
+                    <li>Original Price: $2.00</li>
+                    <li>Save: $0.50</li>
+                </ul>
+                <button onclick="addToCart('Discount Muffin', 1.5)">Add to Cart</button>
+            </div>
+
+            <!-- Special Offer 4 -->
+            <div class="offer-item">
+                <img src="Croissant.jpg" alt="Discount Croissant">
+                <h3>Discount on Croissant</h3>
+                <ul>
+                    <li>Price: $4.00</li>
+                    <li>Original Price: $6.00</li>
+                    <li>Save: $2</li>
+                </ul>
+                <button onclick="addToCart('Discount Croissant', 4)">Add to Cart</button>
+            </div>
+        </section>
+    </div>
+
+    
+
+
+    <script>
+        // Function to add item to the cart
+        function addToCart(itemName) {
+            let cart = JSON.parse(localStorage.getItem('cart')) || [];
+            cart.push(itemName);
+            localStorage.setItem('cart', JSON.stringify(cart));
+            alert(itemName + " added to the cart!");
+        }
+    </script>
+    <script>
+        function addToCart(name, price, imageUrl, category) {
+            // Create an item object
+            const item = { name, price, imageUrl, category, quantity: 1 };
+    
+            // Get existing cart from localStorage
+            let cart = JSON.parse(localStorage.getItem('cart')) || [];
+    
+            // Check if the item already exists in the cart
+            const existingItemIndex = cart.findIndex(cartItem => cartItem.name === name);
+            
+            if (existingItemIndex !== -1) {
+                // If item exists, increase quantity
+                cart[existingItemIndex].quantity += 1;
+            } else {
+                // If item doesn't exist, add it
+                cart.push(item);
+            }
+    
+            // Save the updated cart back to localStorage
+            localStorage.setItem('cart', JSON.stringify(cart));
+    
+            alert(`${name} added to cart!`);
+        }
+    </script>
+</body>
+</html>

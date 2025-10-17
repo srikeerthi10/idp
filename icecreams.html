@@ -1,0 +1,307 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ice Creams - Our Bakery</title>
+    <style>
+        /* Basic Styles */
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        header {
+            text-align: center;
+            background-color: white;
+            padding: 10px;
+            color: red;
+            
+        }
+
+        nav {
+            background-color: #333;
+            padding: 10px 0;
+        }
+
+        nav ul {
+            display: flex;
+            justify-content: center;
+            list-style-type: none;
+            margin: 0;
+            padding: 0;
+        }
+
+        nav ul li {
+            margin: 0 15px;
+        }
+
+        nav button {
+            background-color: #ff6f61;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            cursor: pointer;
+        }
+
+        nav button:hover {
+            background-color: #e65c52;
+        }
+
+        /* Main Container */
+        .container {
+            padding: 20px;
+            text-align: center;
+        }
+
+        /* Available Items Section */
+        .available-items {
+            margin-bottom: 30px;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 20px; /* Adds space between items */
+        }
+
+        .item-list {
+            width: 250px; /* Fixed width for uniform size */
+            height: 450px; /* Fixed height to maintain uniformity */
+            padding: 10px;
+            border: 1px solid #ddd;
+            text-align: center;
+            box-sizing: border-box;
+            background-color: #f9f9f9;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        .item-list img {
+            width: 100%;  /* Makes the image fit within the parent div */
+            height: 200px; /* Fixed height for all images */
+            object-fit: cover; /* Ensures the images cover the assigned space */
+            display: block;
+            margin-bottom: 10px;
+        }
+
+        .item-list h3 {
+            color: #f2a900;
+            font-size: 1.5em;
+            margin-bottom: 10px;
+        }
+
+        .item-list p {
+            color: #333;
+            font-size: 1.2em;
+        }
+
+        .item-list button {
+            background-color: #f2a900;
+            border: none;
+            color: white;
+            padding: 10px 20px;
+            cursor: pointer;
+            font-size: 1.2em;
+            border-radius: 5px;
+            margin-top: 10px;
+        }
+
+        .item-list button:hover {
+            background-color: #d88e00;
+        }
+
+        /* Footer Section */
+        footer {
+            background-color: #333;
+            color: white;
+            text-align: center;
+            padding: 10px;
+        }
+
+        footer a {
+            color: #f2a900;
+            text-decoration: none;
+        }
+
+        footer a:hover {
+            text-decoration: underline;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .item-list {
+                width: 100%; /* Make the items take full width */
+                height: auto; /* Allow height to adjust automatically */
+            }
+
+            nav ul {
+                flex-direction: column;
+                align-items: center;
+            }
+        }
+
+        @media (max-width: 480px) {
+            header h1 {
+                font-size: 2em;
+            }
+
+            .item-list {
+                width: 100%;
+                margin-right: 0;
+                margin-bottom: 20px;
+            }
+        }
+        header h1 {
+        color: red; /* Set header font color to red */
+        font-size: 2.5em;
+    }
+    </style>
+</head>
+<body>
+   <center><header><h1>ICE CREAMS</h1></header></center> 
+   <nav>
+    <ul>
+        <li><a href="Home.html"><button>HOME</button></a></li>
+        <li><a href="cakes.html"><button>Cake Items</button></a></li>
+        <li><a href="icecreams.html"><button>Ice Creams</button></a></li>
+        <li><a href="drinks.html"><button>Drinks</button></a></li>
+        <li><a href="offers.html"><button>Special Offers</button></a></li>
+        <li><a href="contactinfo.html"><button>Contact Info</button></a></li>
+        <li><a href="cart&order.html"><button>Ordered Items</button></a></li>
+
+    </ul>
+</nav>
+
+    <!-- Ice Cream Template Section -->
+    <section id="ice-cream-template">
+        <div class="container">
+            <!-- Available Ice Creams Section -->
+            <section class="available-items">
+                <div class="item-list">
+                    <img src="chocolate ice cream.jpg" alt="Chocolate Ice Cream">
+                    <h3>Chocolate Ice Cream</h3>
+                    <p>Price: $55</p>
+                    <button onclick="addToCart('Chocolate Ice Cream', 55)">Add to Cart</button>
+                </div>
+        
+                <div class="item-list">
+                    <img src="vanilla ice cream.jpg" alt="Vanilla Ice Cream">
+                    <h3>Vanilla Ice Cream</h3>
+                    <p>Price: $35</p>
+                    <button onclick="addToCart('Vanilla Ice Cream', 35)">Add to Cart</button>
+                </div>
+        
+                <div class="item-list">
+                    <img src="strawberry ice cream.jpg" alt="Strawberry Ice Cream">
+                    <h3>Strawberry Ice Cream</h3>
+                    <p>Price: $22</p>
+                    <button onclick="addToCart('Strawberry Ice Cream', 22)">Add to Cart</button>
+                </div>
+        
+                <div class="item-list">
+                    <img src="mint chocolate chip.jpg" alt="Mint Chocolate Chip">
+                    <h3>Mint Chocolate Chip</h3>
+                    <p>Price: $12</p>
+                    <button onclick="addToCart('Mint Chocolate Chip', 12)">Add to Cart</button>
+                </div>
+        
+                <div class="item-list">
+                    <img src="Peach Sorbet ice cream.jpg" alt="Peach Sorbet">
+                    <h3>Peach Sorbet</h3>
+                    <p>Price: $18</p>
+                    <button onclick="addToCart('Peach Sorbet', 18)">Add to Cart</button>
+                </div>
+        
+                <div class="item-list">
+                    <img src="Cookies and Cream ice cream.jpg" alt="Cookies and Cream">
+                    <h3>Cookies and Cream</h3>
+                    <p>Price: $25</p>
+                    <button onclick="addToCart('Cookies and Cream', 25)">Add to Cart</button>
+                </div>
+        
+                <!-- Additional Ice Creams -->
+        
+                <div class="item-list">
+                    <img src="coffee ice cream.jpg" alt="Coffee Ice Cream">
+                    <h3>Coffee Ice Cream</h3>
+                    <p>Price: $28</p>
+                    <button onclick="addToCart('Coffee Ice Cream', 28)">Add to Cart</button>
+                </div>
+        
+                <div class="item-list">
+                    <img src="caramel swirl ice cream.jpg" alt="Caramel Swirl Ice Cream">
+                    <h3>Caramel Swirl Ice Cream</h3>
+                    <p>Price: $30</p>
+                    <button onclick="addToCart('Caramel Swirl Ice Cream', 30)">Add to Cart</button>
+                </div>
+        
+                <div class="item-list">
+                    <img src="butter pecan ice cream.jpg" alt="Butter Pecan Ice Cream">
+                    <h3>Butter Pecan Ice Cream</h3>
+                    <p>Price: $27</p>
+                    <button onclick="addToCart('Butter Pecan Ice Cream', 27)">Add to Cart</button>
+                </div>
+        
+                <div class="item-list">
+                    <img src="pistachio ice cream.jpg" alt="Pistachio Ice Cream">
+                    <h3>Pistachio Ice Cream</h3>
+                    <p>Price: $32</p>
+                    <button onclick="addToCart('Pistachio Ice Cream', 32)">Add to Cart</button>
+                </div>
+        
+                <div class="item-list">
+                    <img src="rocky road ice cream.jpg" alt="Rocky Road Ice Cream">
+                    <h3>Rocky Road Ice Cream</h3>
+                    <p>Price: $33</p>
+                    <button onclick="addToCart('Rocky Road Ice Cream', 33)">Add to Cart</button>
+                </div>
+            </section>
+        </div>
+        
+            </section>
+        </div>
+    </section>
+
+    
+
+
+    <script>
+        // Function to add item to the cart
+        function addToCart(itemName) {
+            let cart = JSON.parse(localStorage.getItem('cart')) || [];
+            cart.push(itemName);
+            localStorage.setItem('cart', JSON.stringify(cart));
+            alert(itemName + " added to the cart!");
+        }
+    </script>
+
+<script>
+    function addToCart(name, price, imageUrl, category) {
+        // Create an item object
+        const item = { name, price, imageUrl, category, quantity: 1 };
+
+        // Get existing cart from localStorage
+        let cart = JSON.parse(localStorage.getItem('cart')) || [];
+
+        // Check if the item already exists in the cart
+        const existingItemIndex = cart.findIndex(cartItem => cartItem.name === name);
+        
+        if (existingItemIndex !== -1) {
+            // If item exists, increase quantity
+            cart[existingItemIndex].quantity += 1;
+        } else {
+            // If item doesn't exist, add it
+            cart.push(item);
+        }
+
+        // Save the updated cart back to localStorage
+        localStorage.setItem('cart', JSON.stringify(cart));
+
+        alert(`${name} added to cart!`);
+    }
+</script>
+
+</body>
+</html>

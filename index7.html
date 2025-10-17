@@ -1,0 +1,121 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Employee Dashboard</title>
+    <style>
+        /* Base Styles for Employee View */
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f9;
+            color: #333;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            min-height: 100vh;
+        }
+
+        .container {
+            width: 80%;
+            margin: 30px auto;
+            display: flex;
+            justify-content: space-between;
+            gap: 20px;
+            flex-direction: column;
+        }
+
+        .order-list {
+            background-color: white;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+
+        .order-item {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 15px;
+            border-bottom: 1px solid #ccc;
+        }
+
+        .order-item button {
+            padding: 10px;
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            cursor: pointer;
+            border-radius: 4px;
+        }
+
+        .order-item button:hover {
+            background-color: #45a049;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <h2>Employee Order Dashboard</h2>
+        <div class="order-list" id="order-list">
+            <!-- Order list will be dynamically generated here -->
+        </div>
+    </div>
+
+    <script>
+        // Sample orders data (This would be fetched from a server in real implementation)
+        const orders = JSON.parse(localStorage.getItem('orders')) || [
+            {
+                id: 1,
+                customerName: 'John Doe',
+                address: '123 Main Street, City, State',
+                status: 'pending'
+            },
+            {
+                id: 2,
+                customerName: 'Jane Smith',
+                address: '456 Oak Road, City, State',
+                status: 'pending'
+            }
+        ];
+
+        // Display the orders in the dashboard
+        function displayOrders() {
+            const orderList = document.getElementById('order-list');
+            orderList.innerHTML = '';
+
+            orders.forEach(order => {
+                const orderItem = document.createElement('div');
+                orderItem.className = 'order-item';
+                orderItem.innerHTML = `
+                    <span>Order for: ${order.customerName}</span>
+                    <span>Status: ${order.status}</span>
+                    <button onclick="markAsDelivered(${order.id})">Mark as Delivered</button>
+                `;
+                orderList.appendChild(orderItem);
+            });
+        }
+
+        // Mark an order as delivered
+        function markAsDelivered(orderId) {
+            const order = orders.find(order => order.id === orderId);
+            if (order) {
+                order.status = 'delivered';
+                alert(`Order for ${order.customerName} has been marked as delivered.`);
+                // Generate OTP
+                const otp = Math.floor(100000 + Math.random() * 900000);
+                console.log(`OTP for delivery: ${otp}`); // For testing, log OTP to the console
+                localStorage.setItem(`order-${orderId}-otp`, otp); // Store OTP for the order
+                displayOrders();
+            }
+        }
+
+        // Initialize the employee dashboard
+        window.onload = displayOrders;
+    </script>
+</body>
+</html>

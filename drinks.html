@@ -1,0 +1,370 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Welcome to Our Bakery - Drinks</title>
+    <style>
+        /* Basic Styles */
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            background-color: white; 
+        }
+
+        header {
+            text-align: center;
+            background-color: white;
+            padding: 10px;
+            color: red;
+           
+        }
+        nav {
+            background-color: #333;
+            padding: 10px 0;
+        }
+
+        nav ul {
+            display: flex;
+            justify-content: center;
+            list-style-type: none;
+            margin: 0;
+            padding: 0;
+        }
+
+        nav ul li {
+            margin: 0 15px;
+        }
+
+        nav button {
+            background-color: #ff6f61;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            cursor: pointer;
+        }
+
+        nav button:hover {
+            background-color: #e65c52;
+        }
+
+        /* Template Section */
+        .container {
+            padding: 20px;
+            text-align: center;
+        }
+
+        /* Available Items Section */
+        .available-items {
+            display: flex;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            margin-top: 30px;
+        }
+
+        .item-list {
+            width: 22%; /* Adjusting width to make items the same size */
+            margin: 10px;
+            padding: 15px;
+            background-color: #f9f9f9;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            text-align: center;
+            box-sizing: border-box;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+        }
+
+        .item-list img {
+            width: 100%; /* Make images take full width */
+            height: 200px; /* Fixed height for consistency */
+            object-fit: cover; /* Ensure image fits properly within the container */
+            border-radius: 8px;
+        }
+
+        .item-list h3 {
+            color: #ff6f61;
+            font-size: 1.6em;
+            margin-bottom: 10px;
+        }
+
+        .item-list ul {
+            list-style-type: none;
+            padding: 0;
+            margin-bottom: 10px;
+        }
+
+        .item-list ul li {
+            font-size: 1.2em;
+            color: #333;
+            margin: 8px 0;
+        }
+
+        .item-list button {
+            background-color: #4caf50;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            margin-top: 15px;
+            cursor: pointer;
+            font-size: 1em;
+            border-radius: 5px;
+        }
+
+        .item-list button:hover {
+            background-color: #45a049;
+        }
+
+        /* Special Offers Section */
+        .special-offers {
+            margin-top: 40px;
+        }
+
+        .special-offers h2 {
+            color: #ff6f61;
+            font-size: 2em;
+        }
+
+        .special-offers ul {
+            list-style-type: none;
+            padding: 0;
+        }
+
+        .special-offers ul li {
+            color: #333;
+            font-size: 1.2em;
+            margin: 10px 0;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .item-list {
+                width: 100%;
+                margin-bottom: 20px;
+            }
+
+            .available-items {
+                text-align: center;
+                display: block;
+            }
+
+            .special-offers h2 {
+                font-size: 1.8em;
+            }
+
+            .special-offers ul li {
+                font-size: 1.1em;
+            }
+        }
+        header h1 {
+        color: red; /* Set header font color to red */
+        font-size: 2.5em;
+    }
+    </style>
+</head>
+<body>
+    <center><header><h1>DRINKS</h1></header></center>
+    <nav>
+        <ul>
+            <li><a href="Home.html"><button>HOME</button></a></li>
+            <li><a href="cakes.html"><button>Cake Items</button></a></li>
+            <li><a href="icecreams.html"><button>Ice Creams</button></a></li>
+            <li><a href="drinks.html"><button>Drinks</button></a></li>
+            <li><a href="offers.html"><button>Special Offers</button></a></li>
+            <li><a href="contactinfo.html"><button>Contact Info</button></a></li>
+            <li><a href="cart&order.html"><button>Ordered Items</button></a></li>
+        </ul>
+    </nav>
+
+    <!-- Available Items Section -->
+    <div class="container">
+        <section class="available-items">
+            <div class="item-list">
+                <img src="coffee.jpg" alt="Coffee">
+                <h3>Coffee</h3>
+                <ul>
+                    <li>Price: $3</li>
+                    <li>Description: Freshly brewed coffee to start your day right.</li>
+                </ul>
+                <button onclick="addToCart('Coffee', 3)">Add to Cart</button>
+            </div>
+    
+            <div class="item-list">
+                <img src="tea.jpg" alt="Tea">
+                <h3>Tea</h3>
+                <ul>
+                    <li>Price: $2.5</li>
+                    <li>Description: A soothing cup of tea with a variety of flavors.</li>
+                </ul>
+                <button onclick="addToCart('Tea', 2.5)">Add to Cart</button>
+            </div>
+    
+            <div class="item-list">
+                <img src="freshjuice.jpg" alt="Fresh Juice">
+                <h3>Fresh Juice</h3>
+                <ul>
+                    <li>Price: $4</li>
+                    <li>Description: Refreshing and healthy juices made from fresh fruits.</li>
+                </ul>
+                <button onclick="addToCart('Fresh Juice', 4)">Add to Cart</button>
+            </div>
+    
+            <div class="item-list">
+                <img src="Milkshake.jpg" alt="Milkshake">
+                <h3>Milkshakes</h3>
+                <ul>
+                    <li>Price: $4.5</li>
+                    <li>Description: Thick and creamy milkshakes available in various flavors.</li>
+                </ul>
+                <button onclick="addToCart('Milkshake', 4.5)">Add to Cart</button>
+            </div>
+    
+            <!-- Additional Drinks -->
+    
+            <div class="item-list">
+                <img src="smoothie.jpg" alt="Smoothie">
+                <h3>Smoothie</h3>
+                <ul>
+                    <li>Price: $5</li>
+                    <li>Description: A healthy, creamy drink made with fresh fruits and yogurt.</li>
+                </ul>
+                <button onclick="addToCart('Smoothie', 5)">Add to Cart</button>
+            </div>
+    
+            <div class="item-list">
+                <img src="lemonade.jpg" alt="Lemonade">
+                <h3>Lemonade</h3>
+                <ul>
+                    <li>Price: $3.5</li>
+                    <li>Description: Freshly squeezed lemonade, perfect for a hot day.</li>
+                </ul>
+                <button onclick="addToCart('Lemonade', 3.5)">Add to Cart</button>
+            </div>
+    
+            <div class="item-list">
+                <img src="Iced Tea.jpg" alt="Iced Tea">
+                <h3>Iced Tea</h3>
+                <ul>
+                    <li>Price: $3</li>
+                    <li>Description: A cold and refreshing iced tea with your choice of flavor.</li>
+                </ul>
+                <button onclick="addToCart('Iced Tea', 3)">Add to Cart</button>
+            </div>
+    
+            <div class="item-list">
+                <img src="Hot Chocolate.jpg" alt="Hot Chocolate">
+                <h3>Hot Chocolate</h3>
+                <ul>
+                    <li>Price: $3.8</li>
+                    <li>Description: A rich and creamy hot chocolate topped with whipped cream.</li>
+                </ul>
+                <button onclick="addToCart('Hot Chocolate', 3.8)">Add to Cart</button>
+            </div>
+    
+            <div class="item-list">
+                <img src="mocha.jpg" alt="Mocha">
+                <h3>Mocha</h3>
+                <ul>
+                    <li>Price: $4.5</li>
+                    <li>Description: A delicious mix of coffee and chocolate, topped with cream.</li>
+                </ul>
+                <button onclick="addToCart('Mocha', 4.5)">Add to Cart</button>
+            </div>
+    
+            <div class="item-list">
+                <img src="cappuccino.jpg" alt="Cappuccino">
+                <h3>Cappuccino</h3>
+                <ul>
+                    <li>Price: $3.2</li>
+                    <li>Description: A perfect blend of espresso, steamed milk, and foam.</li>
+                </ul>
+                <button onclick="addToCart('Cappuccino', 3.2)">Add to Cart</button>
+            </div>
+    
+            <div class="item-list">
+                <img src="Iced Coffee.jpg" alt="Iced Coffee">
+                <h3>Iced Coffee</h3>
+                <ul>
+                    <li>Price: $3.5</li>
+                    <li>Description: A cold, refreshing coffee brewed with ice and a hint of sweetness.</li>
+                </ul>
+                <button onclick="addToCart('Iced Coffee', 3.5)">Add to Cart</button>
+            </div>
+    
+            <div class="item-list">
+                <img src="latte.jpg" alt="Latte">
+                <h3>Latte</h3>
+                <ul>
+                    <li>Price: $3.8</li>
+                    <li>Description: A creamy espresso drink made with steamed milk and a touch of foam.</li>
+                </ul>
+                <button onclick="addToCart('Latte', 3.8)">Add to Cart</button>
+            </div>
+    
+            <div class="item-list">
+                <img src="frappuccino.jpg" alt="Frappuccino">
+                <h3>Frappuccino</h3>
+                <ul>
+                    <li>Price: $4.2</li>
+                    <li>Description: A cold, blended coffee drink with flavors of your choice.</li>
+                </ul>
+                <button onclick="addToCart('Frappuccino', 4.2)">Add to Cart</button>
+            </div>
+    
+            <div class="item-list">
+                <img src="chai.jpg" alt="Chai">
+                <h3>Chai</h3>
+                <ul>
+                    <li>Price: $2.8</li>
+                    <li>Description: A spiced tea blend with milk, perfect for any time of the day.</li>
+                </ul>
+                <button onclick="addToCart('Chai', 2.8)">Add to Cart</button>
+            </div>
+        </section>
+    </div>
+    
+
+
+
+
+    <script>
+        // Function to add item to the cart
+        function addToCart(itemName) {
+            let cart = JSON.parse(localStorage.getItem('cart')) || [];
+            cart.push(itemName);
+            localStorage.setItem('cart', JSON.stringify(cart));
+            alert(itemName + " added to the cart!");
+        }
+    </script>
+
+<script>
+    function addToCart(name, price, imageUrl, category) {
+        // Create an item object
+        const item = { name, price, imageUrl, category, quantity: 1 };
+
+        // Get existing cart from localStorage
+        let cart = JSON.parse(localStorage.getItem('cart')) || [];
+
+        // Check if the item already exists in the cart
+        const existingItemIndex = cart.findIndex(cartItem => cartItem.name === name);
+        
+        if (existingItemIndex !== -1) {
+            // If item exists, increase quantity
+            cart[existingItemIndex].quantity += 1;
+        } else {
+            // If item doesn't exist, add it
+            cart.push(item);
+        }
+
+        // Save the updated cart back to localStorage
+        localStorage.setItem('cart', JSON.stringify(cart));
+
+        alert(`${name} added to cart!`);
+    }
+</script>
+</body>
+</html>

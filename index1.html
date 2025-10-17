@@ -1,0 +1,373 @@
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bakery - Available Items</title>
+    <style>
+        /* General Reset */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: #f9f9f9;
+            color: #333;
+            line-height: 1.6;
+        }
+
+        header {
+            text-align: center;
+            background-color: white;
+            padding: 15px;
+            color: red;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        h1 {
+            font-size: 36px;
+            margin: 0;
+        }
+
+        nav {
+            background-color: #333;
+            padding: 15px 0;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        nav ul {
+            display: flex;
+            justify-content: center;
+            list-style-type: none;
+            margin: 0;
+            padding: 0;
+        }
+
+        nav ul li {
+            margin: 0 15px;
+        }
+
+        nav button {
+            background-color: #ff6f61;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            cursor: pointer;
+            transition: background-color 0.3s, transform 0.3s;
+        }
+
+        nav button:hover {
+            background-color: #e65c52;
+            transform: scale(1.05);
+        }
+
+        /* Layout */
+        .container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            padding: 20px;
+        }
+
+        .products {
+            width: 100%; /* Full width for products section */
+        }
+
+        /* Product Section */
+        h2 {
+            font-size: 28px;
+            margin-bottom: 20px;
+            text-align: center;
+            color: #f2a900;
+        }
+
+        .product-list {
+            display: grid;
+            grid-template-columns: repeat(5, 1fr);
+            gap: 20px;
+            padding: 0;
+        }
+
+        .product {
+            background-color: white;
+            padding: 20px;
+            text-align: center;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .product:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+        }
+
+        .product img {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+            border-radius: 8px;
+            margin-bottom: 15px;
+        }
+
+        h3 {
+            font-size: 24px;
+            margin: 15px 0;
+            color: #333;
+        }
+
+        p {
+            font-size: 18px;
+            color: #555;
+            margin-bottom: 10px;
+        }
+
+        button {
+            background-color: #f8b400;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 16px;
+            transition: background-color 0.3s;
+        }
+
+        button:hover {
+            background-color: #e68900;
+        }
+
+        /* Cart Button Styling */
+        #checkout-button {
+            margin-top: 20px;
+            background-color: #28a745;
+            padding: 15px 30px;
+            font-size: 18px;
+            border-radius: 5px;
+            color: white;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+
+        #checkout-button:hover {
+            background-color: #218838;
+        }
+
+        /* Responsive Styles */
+        @media (max-width: 1024px) {
+            .product-list {
+                grid-template-columns: repeat(4, 1fr); /* 4 items per row on smaller screens */
+            }
+        }
+
+        @media (max-width: 768px) {
+            .container {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .product-list {
+                grid-template-columns: repeat(2, 1fr); /* 2 items per row on tablets */
+            }
+
+            h2 {
+                font-size: 24px;
+            }
+
+            h3 {
+                font-size: 20px;
+            }
+
+            p {
+                font-size: 16px;
+            }
+
+            button {
+                font-size: 14px;
+            }
+
+            #checkout-button {
+                font-size: 16px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            header {
+                padding: 15px;
+            }
+
+            h1 {
+                font-size: 28px;
+            }
+
+            .container {
+                padding: 10px;
+            }
+
+            .product-list {
+                grid-template-columns: 1fr; 
+            }
+
+            h2 {
+                font-size: 22px;
+            }
+
+            h3 {
+                font-size: 18px;
+            }
+
+            p {
+                font-size: 14px;
+            }
+
+            button {
+                font-size: 12px;
+            }
+
+            #checkout-button {
+                font-size: 14px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <h1>CAKE ITEMS</h1>
+    </header>
+
+    <nav>
+        <ul>
+            <li><a href="index.html"><button>HOME</button></a></li>
+            <li><a href="index1.html"><button>Cake Items</button></a></li>
+            <li><a href="index2.html"><button>Ice Creams</button></a></li>
+            <li><a href="index3.html"><button>Drinks</button></a></li>
+            <li><a href="index4.html"><button>Special Offers</button></a></li>
+            <li><a href="index5.html"><button>Contact Info</button></a></li>
+            <li><a href="index6.html"><button>Ordered Items</button></a></li>
+        </ul>
+    </nav>
+
+    <div class="container">
+        <div class="products">
+            <div class="product-list">
+                <!-- Product 1 -->
+                <div class="product">
+                    <img src="chocolate cake.jpg" alt="Chocolate Cake">
+                    <h3>Chocolate Cake</h3>
+                    <p>Price: $15.00</p>
+                    <button onclick="addToCart('Chocolate Cake', 15)">Add to Cart</button>
+                </div>
+                <!-- Product 2 -->
+                <div class="product">
+                    <img src="Vanilla Cake.jpg" alt="Vanilla Cake">
+                    <h3>Vanilla Cake</h3>
+                    <p>Price: $12.00</p>
+                    <button onclick="addToCart('Vanilla Cake', 12)">Add to Cart</button>
+                </div>
+                <!-- Product 3 -->
+                <div class="product">
+                    <img src="Cupcake.jpg" alt="Cupcake">
+                    <h3>Cupcake</h3>
+                    <p>Price: $3.00</p>
+                    <button onclick="addToCart('Cupcake', 3)">Add to Cart</button>
+                </div>
+                <!-- Product 4 -->
+                <div class="product">
+                    <img src="Croissant.jpg" alt="Croissant">
+                    <h3>Croissant</h3>
+                    <p>Price: $6.00</p>
+                    <button onclick="addToCart('Croissant', 6)">Add to Cart</button>
+                </div>
+                <!-- Product 5 -->
+                <div class="product">
+                    <img src="Brownie.jpg" alt="Brownie">
+                    <h3>Brownie</h3>
+                    <p>Price: $4.00</p>
+                    <button onclick="addToCart('Brownie', 4)">Add to Cart</button>
+                </div>
+                <!-- Product 6 -->
+                <div class="product">
+                    <img src="Muffin.jpg" alt="Muffin">
+                    <h3>Muffin</h3>
+                    <p>Price: $2.00</p>
+                    <button onclick="addToCart('Muffin', 2)">Add to Cart</button>
+                </div>
+                <!-- Product 7 -->
+                <div class="product">
+                    <img src="Danish.jpg" alt="Danish">
+                    <h3>Danish</h3>
+                    <p>Price: $3.00</p>
+                    <button onclick="addToCart('Danish', 3)">Add to Cart</button>
+                </div>
+                <!-- Product 8 -->
+                <div class="product">
+                    <img src="Bagel.jpg" alt="Bagel">
+                    <h3>Bagel</h3>
+                    <p>Price: $4.00</p>
+                    <button onclick="addToCart('Bagel', 4)">Add to Cart</button>
+                </div>
+                <!-- Product 9 -->
+                <div class="product">
+                    <img src="Pancake.jpg" alt="Pancake">
+                    <h3>Pancake</h3>
+                    <p>Price: $5.00</p>
+                    <button onclick="addToCart('Pancake', 5)">Add to Cart</button>
+                </div>
+                <!-- Product 10 -->
+                <div class="product">
+                    <img src="Scone.jpg" alt="Scone">
+                    <h3>Scone</h3>
+                    <p>Price: $3.00</p>
+                    <button onclick="addToCart('Scone', 3)">Add to Cart</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+
+    <script>
+        // Function to add item to the cart
+        function addToCart(itemName) {
+            let cart = JSON.parse(localStorage.getItem('cart')) || [];
+            cart.push(itemName);
+            localStorage.setItem('cart', JSON.stringify(cart));
+            alert(itemName + " added to the cart!");
+        }
+    </script>
+
+<script>
+    function addToCart(name, price, imageUrl, category) {
+        // Create an item object
+        const item = { name, price, imageUrl, category, quantity: 1 };
+
+        // Get existing cart from localStorage
+        let cart = JSON.parse(localStorage.getItem('cart')) || [];
+
+        // Check if the item already exists in the cart
+        const existingItemIndex = cart.findIndex(cartItem => cartItem.name === name);
+        
+        if (existingItemIndex !== -1) {
+            // If item exists, increase quantity
+            cart[existingItemIndex].quantity += 1;
+        } else {
+            // If item doesn't exist, add it
+            cart.push(item);
+        }
+
+        // Save the updated cart back to localStorage
+        localStorage.setItem('cart', JSON.stringify(cart));
+
+        alert(`${name} added to cart!`);
+    }
+</script>
+
+</body>
+
+</html>
